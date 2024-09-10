@@ -1,8 +1,17 @@
-resource "aws_instance" "test" {
-  ami           = "ami-0182f373e66f89c85"
-  instance_type = var.intance_size
+module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
+
+  for_each = toset(["one", "two", "three"])
+
+  name = "instance-${each.key}"
+
+  instance_type          = "t2.micro"
+  
+  monitoring             = false
+ 
 
   tags = {
-    Name = "Terraform instace"
+    Terraform   = "true"
+    Environment = "dev"
   }
 }
