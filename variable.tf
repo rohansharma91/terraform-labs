@@ -5,5 +5,5 @@ variable "intance_size" {
 
 variable "regionname" {
 
-  default = "us-east-2"
+  default = "us-east-1"
 }
