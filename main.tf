@@ -1,8 +1,8 @@
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket-rerssss"
-
+resource "aws_instace" "example" {
+  ami= "ami-0182f373e66f89c85"
+  instance_type = "t2.micro"
   tags = {
-    Name        = "My bucket"
+    Name        = "Terraform"
     Environment = "Dev"
   }
 }
