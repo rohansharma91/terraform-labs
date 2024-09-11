@@ -4,6 +4,8 @@ module "ec2_instance" {
   name = "single-instance"
 
   instance_type          = "t2.micro"
+
+  Count= 3
   
   tags = {
     Terraform   = "true"
