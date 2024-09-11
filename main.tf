@@ -1,14 +1,15 @@
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
+resource "aws_s3_bucket" "example" {
+  bucket = "example-bucket_ro_1991"
+}
 
-  name = "single-instance"
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.example.id
+  acl    = "private"
+}
 
-  instance_type          = "t2.micro"
-
-  count= 2
-  
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
+resource "aws_s3_bucket_versioning" "versioning_example" {
+  bucket = aws_s3_bucket.example.id
+  versioning_configuration {
+    status = "Enabled"
   }
 }
