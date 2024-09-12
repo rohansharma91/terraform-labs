@@ -5,5 +5,5 @@ variable "vpc_cidr" {
 
 variable "regionname" {
 
-  default = "us-east-2"
+  default = "us-east-1"
 }
