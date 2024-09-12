@@ -4,7 +4,7 @@ resource "aws_instace" "test"{
   subnet_id= aws_subnet.test_subnet.id
 
 tags= {
-   Name= terraform test
+   Name= "terraform test"
 
  }
 }
