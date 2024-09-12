@@ -1,8 +1,13 @@
-resource "aws_instance" "example" {
-  ami= "ami-0182f373e66f89c85"
-  instance_type = "t2.micro"
+module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+
+  name = "my-vpc"
+  cidr = var.vpc_cidr
+
+
+
   tags = {
-    Name        = "Terraform"
-    Environment = "Dev"
+    Terraform = "true"
+    Environment = "dev"
   }
 }
