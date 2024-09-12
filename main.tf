@@ -21,4 +21,4 @@ resource "aws_subnet" "test_subnet"{
   cidr_block = "10.0.128.0/17"
 
  }
-}
+
