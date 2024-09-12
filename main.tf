@@ -1,5 +1,5 @@
 resource "aws_instace" "test"{
-  ami= ""
+  ami= "ami-0182f373e66f89c85"
   instance_type= "t2.micro"
   subnet_id= aws_subnet.test_subnet.id
 
