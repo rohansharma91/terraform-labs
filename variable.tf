@@ -1,6 +1,6 @@
-variable "intance_size" {
+variable "vpc_cidr" {
   
-  default     = "t2.micro"
+  default     = ""10.0.0.0/16"
 }
 
 variable "regionname" {
